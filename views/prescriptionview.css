@@ -1,0 +1,59 @@
+body 
+{
+	background-color: #360F59;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color:#311549;
+    height: 100%; 
+    position: fixed; 
+    overflow: auto;
+    left: 0px;
+    top: 0px;
+    width: 125px;
+    font-family: "Avenir Next";
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+
+   
+
+}
+#profileicon
+{
+	border-radius: 50px;
+	height:75px; 
+	width:75px;
+}
+#loginicon
+{
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+}
+#abouticon
+{
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+}
+li a 
+{
+	display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    height:100px;
+    width: 100%;
+
+}
+li a:hover {
+    background-color: #553472;
+    color: white;
+}
+.active {
+    background-color: #4CAF50;
+}

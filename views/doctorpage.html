@@ -1,0 +1,344 @@
+<html ng-app="doctor">
+<head>
+    <title>
+        Doctor's view
+    </title>
+    <link rel="stylesheet" type="text/css" href= "doctor.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            $("#datepicker").datepicker();
+        });
+
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('doctor',[]);
+        app.controller('MainCtrl', function ($scope, $http) {
+            $scope.name = null;
+            $scope.gender = null;
+            $scope.age = null;
+            $scope.weight = null;
+            $scope.pid = null;
+            $scope.symptoms = null;
+            $scope.medicine = null;
+            $scope.dosage = null;
+            $scope.duration = null;
+            $scope.nooftimes = null;
+            $scope.specinst = null;
+
+            $scope.drname = null;
+            $scope.drage = null;
+            $scope.drdepartment = null;
+            var tryVar;
+
+// Get the modal
+            var modal = document.getElementById('myModal');
+            var modal1 = document.getElementById('myModal1');
+
+// Get the button that opens the modal
+            var btn = document.getElementById("list1");
+            var btn1 = document.getElementById("list4");
+
+// Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            var span1 = document.getElementsByClassName("close1")[0];
+// When the user clicks on the button, open the modal
+            btn.onclick =  function open() {
+
+                modal.style.display = "block";
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "http://localhost:3000/", true);
+                xhr.send();
+
+                xhr.onreadystatechange = processRequest;
+
+                function processRequest(e) {
+                    alert(e);
+
+                }
+                /*$http.get("myjson.json")
+                            .then(function (res) {
+                                $scope.myObject=res.data.records;
+                            });
+                            */
+            <!--
+                    // var request = {
+                    //   method: 'get',
+                    // url: 'now.json',
+                    //dataType: 'json',
+                    //contentType: "application/json"
+                    //};
+
+                    //$scope.arrBirds = new Array;
+
+                    //$http(request)
+                    //  .success(function (jsonData) {
+                    //    $scope.arrBirds = jsonData;
+                    //  $scope.list = $scope.arrBirds;
+                    //})
+                    //.error(function () {
+
+                    //});
+                    -->
+                <!--
+//$http.get('category.json').success(function(data){
+                    // $scope.books = data;
+
+
+                    //alert("yes");
+                    // })
+                    -->
+
+
+
+                /*
+                var drJSON = '{ "name":"John", "age":31, "department":"Radiology" }';
+
+                var myObj = JSON.parse(drJSON);
+                document.getElementById("drname").innerHTML = myObj.name;
+                document.getElementById("drage").innerHTML = myObj.age;
+                document.getElementById("drdepartment").innerHTML = myObj.department;
+                    --> */
+            }
+
+// When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+
+            }
+            span1.onclick = function() {
+                modal1.style.display = "none";
+
+            }
+// When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                if(event.target == modal1)
+                {
+                    modal1.style.display="none";
+                }
+            }
+
+            var login = document.getElementById("list2");
+            login.onclick= function()
+            {
+                window.location.replace("file:///Users/sangeetha/Desktop/Doctor%20Side/webpagecode.html");
+            }
+
+            $scope.postdata = function (name, gender, age, weight, pid, symptoms, medicine, dosage, duration, nooftimes, specinst) {
+                var data = {
+                    name: name,
+                    gender: gender,
+                    age: age,
+                    weight: weight,
+                    pid: pid,
+                    symptoms: symptoms,
+                    medicine: medicine,
+                    dosage: dosage,
+                    duration: duration,
+                    nooftimes: nooftimes,
+                    specinst: specinst
+                };
+
+//Call the services
+                $http.post('http://localhost:3000/',JSON.stringify(data)).then(function (response) {
+
+                    if (response.data)
+                        $scope.msg = "Post Data Submitted Successfully!";
+                }, function (response) {
+                    $scope.msg = "Service not Exists";
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers();
+                    ;
+                });
+
+                /*alert(JSON.stringify(data));*/
+                alert("Prescription submitted successfully");
+                tryVar = data;
+            };
+            btn1.onclick =  function () {
+
+                modal1.style.display = "block";
+                document.getElementById("pname").innerHTML= tryVar.name;
+                document.getElementById("pgender").innerHTML= tryVar.gender;
+                document.getElementById("page").innerHTML = tryVar.age;
+                document.getElementById("pweight").innerHTML= tryVar.weight;
+                document.getElementById("pid").innerHTML= tryVar.pid;
+                document.getElementById("psymptoms").innerHTML= tryVar.symptoms;
+                document.getElementById("pmedicine").innerHTML= tryVar.medicine;
+                document.getElementById("pdosage").innerHTML= tryVar.dosage;
+                document.getElementById("pduration").innerHTML= tryVar.duration;
+                document.getElementById("pnooftimes").innerHTML= tryVar.nooftimes;
+                document.getElementById("pspecinst").innerHTML= tryVar.specinst;
+                /*$http.get(a)
+                            .then(function (res) {
+                                $scope.myObject=res.data;
+                            });
+            */
+                /* $http.get("category.json")
+                            .then(function (res) {
+                                $scope.myObject=res.data.records;
+                            });
+            */
+
+            }
+        });
+    </script>
+
+</head>
+<body ng-controller="MainCtrl" background="background.jpg" >
+<ul>
+    <li id="list1"><input type="image" id="profileicon" src="medical.jpg" ><br><font color="white">Your Profile</font></input></li>
+    <li id="list2"><input type="image" id="loginicon" src="loginicon.jpg"><br><font color="white">Login page</font></input></li>
+    <li id="list4"><input type="image" id="prescriptionicon" src="prescriptionicon.png"><br><font color="white">View prescription</font></input></li>
+    <li id="list3"><input type="image" id="abouticon" src="abouticon.jpg"><br><font color="white">About</font></input></li>
+
+</ul>
+<form id="doctorform">
+
+    <p id="nametext">Name:</p>
+
+    <input id="name" type="text" ng-model="name" required/>
+
+    <p id="gendertext">Gender:</p>
+    <input type="radio" value="male" ng-model="gender"> <font color="white" size="3" face="Avenir Next"> Male</font>
+    <input type="radio" value="female" ng-model="gender"><font color="white" size="3" face="Avenir Next"> Female</font>
+    <input id="age" type="number" ng-model="age"/><font id="agename" color="white" size="3" face="Avenir Next" >Age:</font>
+    <input id="weight" type="number" ng-model="weight"/><font id="weightname" color="white" size="3" face="Avenir Next">Weight:</font>
+    <input type="text"  id="datepicker" ng-model="ctrl.dob"><font id="dobname" color="white" size="3" face="Avenir Next">Date Of Birth:</font>
+    <input type="text" id="patientid" ng-model="pid"/><font id="patientidname" color="white" size="3" face="Avenir Next">Patient ID:</font>
+    <input type="text" id="medicine" ng-model="medicine"/><font id="medicineidname" color="white" size="3" face="Avenir Next">Medicine Name:</font>
+    <input type="text" id="dosage" ng-model="dosage"/><font id="dosageidname" color="white" size="3" face="Avenir Next">Dosage:</font>
+    <input type="text" id="duration" ng-model="duration"/><font id="durationidname" color="white" size="3" face="Avenir Next">Duration:</font>
+    <input type="number" name="nooftimes" id="times" ng-model="nooftimes"/><font id="timesidname" color="white" size="3" face="Avenir Next">No. of times to be taken per day:</font>
+
+
+    <input id="submitbutton" type="button" value="Send" ng-click="postdata(name, gender, age, weight, pid, symptoms, medicine, dosage, duration, nooftimes, specinst)"/>
+    <input id="resetbutton" type="reset">
+</form>
+<textarea id="symptomform" form="doctorform" ng-model="symptoms" placeholder="Enter symptoms here:"></textarea>
+<textarea id="specialinstructionsform" form="doctorform" ng-model="specinst" placeholder="Enter special instructions here:"></textarea>
+
+
+
+<div id="myModal1" class="modal1">
+
+    <table id="ptable">
+        <tr>
+            <th>Name:</th>
+            <th id="pname"></th>
+
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <th id="page"></th>
+        </tr>
+        <tr>
+            <th>Gender:</th>
+            <th id="pgender"></th>
+        </tr>
+        <tr>
+            <th>Weight:</th>
+            <th id="pweight"></th>
+        </tr>
+        <tr>
+            <th>Date of Birth:</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>Patient ID:</th>
+            <th id="pid"></th>
+        </tr>
+        <tr>
+            <th>Symptoms:</th>
+            <th id="psymptoms"></th>
+        </tr>
+        <tr>
+            <th>Medicine Name:</th>
+            <th id="pmedicine"></th>
+        </tr>
+
+        <tr>
+            <th>Dosage:</th>
+            <th id="pdosage"></th>
+        </tr>
+        <tr>
+            <th>Duration:</th>
+            <th id="pduration"></th>
+        </tr>
+        <tr>
+            <th>No. of times:</th>
+            <th id="pnooftimes"></th>
+        </tr>
+        <tr>
+            <th>Special Instructions:</th>
+            <th id="pspecinst"></th>
+        </tr>
+
+
+    </table>
+
+
+
+
+    <span class="close1">&times;</span>
+
+</div>
+
+<div id="myModal" class="modal">
+    {{ a }}
+    <table id="table" ng-repeat="x in myObject ">
+        <tr>
+            <th>Name:</th>
+            <th>{{x.Name}}</th>
+
+        </tr>
+
+
+
+
+        <tr>
+            <th>Age:</th>
+            <th>{{x.Age}}</th>
+        </tr>
+        <tr>
+            <th>Department:</th>
+            <th>{{x.Department}}</th>
+        </tr>
+
+    </table>
+    <span class="close">&times;</span>
+    <!--<h3>Original JSON file: {{myObject}}</h3>  -->
+    <!--
+           <ul id="ulid" ng-repeat="birds in list">
+            <li> {{ birds.Name }}</li>
+            <li> Yolo </li>
+          </ul>
+         -->
+
+    <!-- oyt without
+        <p> {{list[1].Name}} </p>
+         {{list[0].Name}}
+         {{list[1].Age}}
+         {{list[0].Age}}
+         {{list[1].Department}}
+         {{list[0].Department}}
+       -->
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

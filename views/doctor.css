@@ -1,0 +1,430 @@
+body 
+{
+	background-color: #360F59;
+	
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    background-color:#311549;
+    height: 100%; 
+    position: fixed; 
+    overflow: auto;
+    left: 0px;
+    top: 0px;
+    width: 125px;
+    font-family: "Avenir Next";
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+
+   
+
+}
+#profileicon
+{
+	border-radius: 50px;
+	height:75px; 
+	width:75px;
+}
+
+#loginicon
+{
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+	
+}
+#abouticon
+{
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+}
+#prescriptionicon
+{
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+}
+#name
+{
+	top:75px;
+	left:200px;
+	position: absolute;
+	width: 200px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+}
+#nametext
+{
+	top:30px;
+	left:200px;
+	position: absolute;
+	color: white;
+	font-size: 100%;
+}
+#gendertext
+
+{
+top:30px;
+left:700px;
+position: absolute;
+color: white;
+font-size: 100%;
+}
+input[type=radio]
+{
+	background-color: white;
+	border: none;
+	color: ##360F59;
+	margin-left: 700px;
+	margin-top: 110px;
+
+}
+#maleavatar
+{
+	height: 100px;
+	width: 100px;
+	margin-left:800px;
+	top:100px; 
+	position: absolute;
+	border-radius: 50px;
+
+}
+#femaleavatar
+{
+	height: 100px;
+	width: 100px;
+	margin-left: 800px;
+	top:210px;
+	position: absolute;
+	border-radius: 50px;
+
+}
+#age
+{
+		
+	position: absolute;
+	top: 150px;
+	left: 200px;
+	width: 40px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+}
+#agename
+{
+	position: absolute;
+	top: 120px;
+	left: 200px;
+	color: white;
+	font-size: 100%;
+
+}
+#weight
+{
+	position: absolute;
+	top: 150px;
+	left: 400px;
+	width: 40px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+}
+#weightname
+{
+	position: absolute;
+	top: 120px;
+	left: 400px;
+	color: white;
+	font-size: 100%;
+}
+#dobname
+{
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	color: white;
+	font-size: 100%;
+}
+#datepicker
+{
+	position: absolute;
+	top: 220px;
+	left: 200px;
+	border-radius: 10px;
+	width: 100px;
+	height:20px;
+}
+#patientid
+{
+	position: absolute;
+	width: 150px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+	top: 220px;
+	left:400px;
+}
+#patientidname
+{
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	color: white;
+	font-size: 100%;
+}
+#symptomform
+{
+	position: absolute;
+	top: 275px;
+	left: 200px;
+	width: 350px;
+	height: 200px;
+	border-radius: 10px;
+}
+#medicineidname
+{
+	position: absolute;
+	top:500px;
+	left: 200px;
+	color: white;
+}
+#medicine
+{
+position: absolute;
+	width: 225px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+	top: 520px;
+	left:200px;
+}
+#dosage
+{
+	position: absolute;
+	width: 150px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+	top: 520px;
+	left:450px;
+
+}
+#dosageidname
+{
+	position: absolute;
+	top: 500px;
+	left: 450px;
+	color: white;
+	
+}
+#duration
+{
+	position: absolute;
+	width: 100px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+	top: 520px;
+	left:625px;
+}
+#durationidname
+{
+	position: absolute;
+	top: 500px;
+	left: 625px;
+	color: white;
+}
+#times
+{
+	position: absolute;
+	top: 520px;
+	left: 750px;
+	width: 40px;
+	height:20px;
+	font-size: 100%;
+	border-radius: 10px;
+
+}
+#timesidname
+{
+	position: absolute;
+	top: 500px;
+	left: 750px;
+	color: white;
+}
+#specialinstructionsform
+{
+	position: absolute;
+	top: 575px;
+	left: 200px;
+	width: 350px;
+	height: 200px;
+	border-radius: 10px;
+}
+#submitbutton
+{
+	position:absolute;
+	left:200px;
+	top:800px;
+	width: 50;
+	height: 25;
+	border-radius: 10px;
+	font-family: "Avenir Next";
+	background-color: #553472;
+	color:white;
+
+
+}
+#resetbutton
+{
+	position:absolute;
+	left:300px;
+	top:800px;
+	width: 50;
+	height: 25;
+	border-radius: 10px;
+	font-family: "Avenir Next";
+	background-color: #553472;
+	color:white;
+
+}
+li
+{
+
+	display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    height:100px;
+    width: 100%;
+    
+}
+li:hover {
+    background-color: #553472;
+    color: white;
+}
+.active {
+    background-color: blue;
+}
+li a:visited{
+	color: #6A6A6A;
+
+}
+.modal,.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 200px;
+    top: 50px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+#myModal
+{
+	background-image: url("profile.png");
+	background-repeat: no-repeat;
+}
+#myModal1
+{
+	background-image: url("pview.png");
+	background-repeat: no-repeat;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+
+}
+.modal1-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#myBtn
+{
+	position: absolute;
+	top: 300px;
+	left: 500px;
+}
+#profileview
+{
+	border-radius: 10px;
+}
+#table
+{
+	position: absolute;
+	left: 350px;
+	top:80px;
+	padding: 15px;
+    text-align: left;
+	border: 1px solid black;
+	border-color: #FB9E76;
+	font-size: 30px;
+	font-family: "Avenir Next";
+	font-weight: normal;
+	
+}
+#ptable
+{
+	position: absolute;
+	left: 135px;
+	top:80px;
+	padding: 15px;
+    text-align: left;
+	
+	font-size: 20px;
+	font-family: "Avenir Next";
+	font-weight: normal;
+	height: 300px;
+}
+th
+{
+	font-style: italic;
+	font-weight: 0px;
+}
+

@@ -1,0 +1,10 @@
+{
+  "name1": "login_auth",
+  "main1": "./login_auth.js",
+
+  "name": "prescription",
+  "main": "./prescription.js",
+
+  "name3": "user_data",
+  "main3": "./user_data.js"
+}
