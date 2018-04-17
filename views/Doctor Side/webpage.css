@@ -21,10 +21,10 @@ body
 {
 	position: absolute;
 	background-color: white;
-	left:590px;
-	top:220px;
+	left:515px;
+	top:300px;
 	color:black;
-	width: 180px;
+	width: 250px;
 	height: 30px;
 	border-radius: 50px;
 	border:white;
@@ -34,10 +34,10 @@ body
 #password
 {
 	position: absolute;
-	left:590px;
-	top:260px;
+	left:515px;
+	top:350px;
 	color:black;
-	width: 180px;
+	width: 250px;
 	height: 30px;
 	border-radius: 50px;
 	border: white;
@@ -47,8 +47,8 @@ body
 #submitbutton
 {
 	position:absolute;
-	left:630px;
-	top:300px;
+	left:590px;
+	top:400px;
 	width: 100px;
 	height: 25px;
 	background-color:#360F59; 

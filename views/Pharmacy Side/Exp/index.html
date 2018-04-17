@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wikitechy AngularJS Tutorials</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="jsonCtrl" >
+            <h3>JSON Fetching example in AngularJS </h3>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Car</th>
+                    <th>Model</th>
+                </tr>
+                <tr ng-repeat="x in myObject " >
+                    <th>{{x.id}}</th>
+                    <th>{{x.Car}}</th>
+                    <th>{{x.Model}}</th>
+                </tr>
+            </table>
+            <h3>Original JSON file: {{myObject}}</h3>    
+        </div>   
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("jsonCtrl", function($scope, $http) {
+                $http.get("https://api.myjson.com/bins/s9mvb")
+                .then(function (res) {
+                    
+                    
+                    $scope.myObject=res.data.records;
+                    
+                    console.log(res.data.records);
+
+                });                  
+            });
+        
+    </script>
+    </body>
+</html>

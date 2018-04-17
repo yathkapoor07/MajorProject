@@ -1,0 +1,114 @@
+body 
+{
+	background-color: #360F59;
+}
+#backgroundimage
+{
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	background-position: center;
+}
+#baymax
+{
+	position: absolute;
+	left:10px;
+	bottom:10px;
+	height:179px;
+	width:141px;
+}
+#username
+{
+	position: absolute;
+	background-color: white;
+	left:515px;
+	top:300px;
+	color:black;
+	width: 250px;
+	height: 30px;
+	border-radius: 50px;
+	border:white;
+	font-size: 22px;
+	padding-left: 10px;
+}
+#password
+{
+	position: absolute;
+	left:515px;
+	top:350px;
+	color:black;
+	width: 250px;
+	height: 30px;
+	border-radius: 50px;
+	border: white;
+	font-size: 22px;
+	padding-left: 10px;
+}
+#submitbutton
+{
+	position:absolute;
+	left:590px;
+	top:400px;
+	width: 100px;
+	height: 25px;
+	background-color:#360F59; 
+	color: white;
+	
+	border-radius: 20px;
+	border-color: white;
+}
+#submitbutton:hover
+{
+	background-color: #553472;
+    color: white;
+}
+#speechbubble
+{
+	display: block;
+	margin-left: 100px;
+	margin-top: 350px;
+}
+
+
+::placeholder
+{
+	font-size: 15px;
+
+}
+.container {
+  position: relative;
+  width: 192px;
+}
+
+
+
+.overlay {
+  position: absolute;
+  bottom: 15;
+  left: 105px;
+  right: 0;
+  border-radius: 30px;
+  background-color: #DAD6DD;
+  overflow: hidden;
+  width: 0;
+  height: 80px;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  width: 100%;
+}
+
+.text {
+
+  white-space: nowrap; 
+  color: black;
+  font-size: 15px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  font-style: "Avenir Next";
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

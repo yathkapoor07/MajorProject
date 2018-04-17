@@ -1,0 +1,361 @@
+<html ng-app="doctor">
+<head>
+<title>
+Doctor's view
+</title>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="calc/jcalculator.css" rel="stylesheet" type="text/css">
+<style>
+.container {
+  width: 400px;
+  margin: 50px auto;
+}
+
+.container input {
+  border: 0;
+  padding: 20px 30px;
+  width: 460px;
+  color: #5e5e5e;
+  font-size: 24px;
+  font-family: Roboto;
+  border-radius: 5px;
+  outline: 0;
+  border: 4px solid #D8D8D8;
+}
+
+.container input:focus {
+  border-color: #37BE42;
+  border-radius: 5px 5px 0px 5px;
+}
+
+.container input:focus .jcalculator {
+  display: block;
+}
+/*Calc*/
+</style>
+<link rel="stylesheet" type="text/css" href= "doctor.css"> 
+ <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+ 
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<script type="text/javascript">
+/*records.items.push(
+    {Name:Natasha, "Age":"23", Gender:"Female", Weight:"55kg", DOB:"03/06/1996", PID:"RA1411003010304", Symp:"None", MName:"None", Dosage:"none", Duration:"40mh", Nooftimes:"4", Specinst:"All"}
+   
+);	*/
+ //id: "7", name: "Douglas Adams", type: "comedy"}
+console.log(records.items);
+
+</script>
+<script type="text/javascript">
+var app = angular.module('doctor',[]);
+app.controller('MainCtrl', function ($scope, $http) {
+	
+	/*{ "records":[{"Name":"Yatharth Kapoor","Age":"22","Gender":"Male","Weight":"70kg", "DOB":"07/07/1996", "PID":"RA1411003010334", "Symp":"Headache, Cold, Fever","MName":"Dolo","Dosage":"650mg","Duration":"3 days", "Nooftimes":"4","Specinst":"Allergies: None" } ]}*/
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+var modal1 = document.getElementById('myModal1');
+
+// Get the button that opens the modal
+var btn = document.getElementById("list1");
+var btn1 = document.getElementById("list4");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close1")[0];
+// When the user clicks on the button, open the modal 
+btn.onclick =  function open() {
+    
+   modal.style.display = "block";
+    $http.get("category.json")
+                .then(function (res) {
+                    $scope.myObject=res.data.emp;
+                });                  
+ 
+  // var request = {
+             //   method: 'get',
+               // url: 'now.json',
+                //dataType: 'json',
+                //contentType: "application/json"
+            //};
+
+            //$scope.arrBirds = new Array;
+
+            //$http(request)
+              //  .success(function (jsonData) {
+                //    $scope.arrBirds = jsonData;
+                  //  $scope.list = $scope.arrBirds;
+                //})
+                //.error(function () {
+
+                //});
+
+//$http.get('category.json').success(function(data){
+           // $scope.books = data;
+               
+
+          //alert("yes");
+       // })
+ 
+
+
+
+/*
+var drJSON = '{ "name":"John", "age":31, "department":"Radiology" }';
+
+var myObj = JSON.parse(drJSON);
+document.getElementById("drname").innerHTML = myObj.name;
+document.getElementById("drage").innerHTML = myObj.age;
+document.getElementById("drdepartment").innerHTML = myObj.department;
+    --> */
+}
+btn1.onclick =  function open1() {
+    
+   modal1.style.display = "block";
+  $http.get("category.json")
+                .then(function (res1) {
+                    $scope.myObject1=res1.data.records;
+                });            
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+
+}
+span1.onclick = function() {
+    modal1.style.display = "none";
+
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if(event.target == modal1)
+    {
+      modal1.style.display="none";
+    }
+}
+
+
+var login = document.getElementById("list2");
+login.onclick= function()
+{
+	window.location.replace("file:///Users/sangeetha/Desktop/Pharmacy%20Side/webpagecode.html");
+} 
+
+
+});
+
+</script>
+
+</head>
+<body ng-controller="MainCtrl" background="background.jpg" >
+	<ul>
+		<li id="list1"><input type="image" id="profileicon" src="medical.jpg" ><br><font color="white">Your Profile</font></input></li>
+		<li id="list2"><input type="image" id="loginicon" src="loginicon.jpg"><br><font color="white">Login page</font></input></li>
+    <li id="list4"><input type="image" id="prescriptionicon" src="prescriptionicon.png"><br><font color="white">View prescription</font></input></li>
+		<li id="list3"><input type="image" id="abouticon" src="abouticon.jpg"><br><font color="white">About</font></input></li>
+
+	</ul>
+
+
+  
+  
+<div id="myModal1" class="modal1">
+ 
+          <table id="ptable" ng-repeat="y in myObject1 ">
+                <tr>
+                    <th>Name:</th>
+                    <th>{{y.Name}}</th>
+                    
+                </tr>
+                    <tr>
+                  <th>Age:</th>
+                  <th>{{y.Age}}</th>
+                </tr>
+                <tr>
+                  <th>Gender:</th>
+                  <th>{{y.Gender}}</th>
+                </tr>
+                <tr>
+                  <th>Weight:</th>
+                  <th>{{y.Weight}}</th>
+                </tr>
+                <tr>
+                  <th>Date of Birth:</th>
+                  <th>{{y.DOB}}</th>
+                </tr>
+                <tr>
+                  <th>Patient ID:</th>
+                  <th>{{y.PID}}</th>
+                </tr>
+                <tr>
+                  <th>Symptoms:</th>
+                  <th>{{y.Symp}}</th>
+                </tr>
+              <tr>
+                  <th>Medicine Name:</th>
+                  <th>{{y.MName}}</th>
+                </tr>
+                 
+                <tr>
+                  <th>Dosage:</th>
+                  <th>{{y.Dosage}}</th>
+                </tr>
+                 <tr>
+                  <th>Duration:</th>
+                  <th>{{y.Duration}}</th>
+                </tr>
+                 <tr>
+                  <th>No. of times:</th>
+                  <th>{{y.Nooftimes}}</th>
+                </tr>
+                 <tr>
+                  <th>Special Instructions:</th>
+                  <th>{{y.Specinst}}</th>
+                </tr>
+
+                
+                
+
+            </table>
+            
+<span class="close1">&times;</span>
+ 
+
+</div>
+
+
+<div id="myModal" class="modal">
+
+            <table id="table" ng-repeat="x in myObject ">
+                <tr>
+                    <th>Employee ID:</th>
+                    <th>{{x.ID}}</th>
+                    
+                </tr>
+                <tr>
+                  <th>Name:</th>
+                  <th>{{x.Empname}}</th>
+                </tr>
+               
+
+            </table>
+              <span class="close">&times;</span>
+           <!--<h3>Original JSON file: {{myObject}}</h3>  -->
+  <!--
+         <ul id="ulid" ng-repeat="birds in list">
+          <li> {{ birds.Name }}</li>
+          <li> Yolo </li>
+        </ul>
+       -->
+  
+   <!-- oyt without 
+       <p> {{list[1].Name}} </p>  
+        {{list[0].Name}}
+        {{list[1].Age}}
+        {{list[0].Age}}
+        {{list[1].Department}}
+        {{list[0].Department}}
+      -->
+  
+ 
+   
+
+</div>
+
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "200px";
+    }
+}
+
+// Grid View
+function gridView() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "100px";
+    }
+}
+
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+<p id="prest"> View Prescriptions in either List View or Grid View </p>
+<div id="btnContainer">
+<button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+<button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+</div>
+<br>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+  
+</div>
+
+<div class="container">
+<input id="demo" type="text" placeholder="Click for calculator" />
+</div>
+
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="calc/jcalculator.js"></script>
+<script>
+ $(document).ready(function() {                       
+        $('#demo').calculator();
+      });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body>
+</html>

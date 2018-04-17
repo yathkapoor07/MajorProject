@@ -1,0 +1,115 @@
+<html ng-app="login">
+<head>
+<title> Homepage </title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('login',[]);
+app.controller('MainCtrl', function ($scope, $http) {
+$scope.username = null;
+$scope.password = null;
+$scope.fname = null;
+$scope.lname = null;
+$scope.eid = null;
+
+$scope.postdata = function (username, password, fanme, lname, eid) {
+var data = {
+username: username,
+password: password
+fname: fname,
+lname: lname,
+eid :eid
+};
+
+var a=JSON.stringify(data);
+ var user={"username":"natasha","password":"123456"};
+ var user2={"username":"yatharth","password":"123456"}
+ var b=JSON.stringify(user);
+var c=JSON.stringify(user2);
+
+//Call the services
+$http.post('http://localhost:3000/api/login',JSON.stringify(data)).then(function (response) {
+if (response.data)
+$scope.msg = "Post Data Submitted Successfully!";
+}, function (response) {
+$scope.msg = "Service not Exists";
+//alert("Nope");
+$scope.statusval = response.status;
+$scope.statustext = response.statusText;
+$scope.headers = response.headers();
+;
+});
+/*$http.post('/api/login',data)
+    .then(
+        function(response) {
+            // success callback
+            alert("posted successfully");
+            $scope.message = "Login succesful";
+
+        },
+        function(response) {
+            // failure callback,handle error here
+            // response.data.message will be "This is an error!"
+
+            console.log(response.data.message);
+
+            $scope.message = response.data.message
+        }
+    );
+*/
+
+if (a===b)
+{
+  window.location.replace("file:///Users/NatashaPaul/Desktop/Doctor%20Side/doctorpage.html");
+}
+else if (a==c)
+{
+  window.location.replace("file:///Users/NatashaPaul/Desktop/Doctor%20Side/doctorpage.html");
+}
+else
+{
+  alert("Wrong Username or Password");
+location.reload();
+
+}
+
+  //document.write(b);
+
+//alert(user.username);
+
+
+
+//end ofpost data function
+};
+
+//
+//document.write("Hello");
+
+//end ofcontroller function
+});
+</script>
+
+
+</head>
+
+
+<body ng-controller="MainCtrl">
+
+
+<form id="loginform">
+
+  <input id="username" type="text" ng-model="username" required placeholder="Username" /><br>
+ 
+  <input id="password" type="password" ng-model="password" placeholder="Password" required />
+  <input type="text"  ng-model="fname" placeholder="First Name">
+  <input type="text" ng-model="lname" placeholder="Last Name">
+  <input type="text" ng-model="eid" placeholder="Employee ID">
+  <input id="submitbutton" type="button" value="Submit"  ng-click="postdata(username,password, fname, lname, eid)"/>
+</form>	
+<!-- first name last name usernmae passwrd -->
+
+
+</body>
+</html>
