@@ -5,7 +5,7 @@ var user = require('C:/Users/Yatharth Kapoor/WebstormProjects/untitled/models/us
 
 /* GET home page. */
 router.get('/', function(req, res1, res2) {
-  res1.render('C:/Users/Yatharth Kapoor/WebstormProjects/untitled/views/doctorpage.html');
+  res1.render('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Doctor Side//doctorpage.html');
   //user.findOne({username: ''})
 
 });
