@@ -19,6 +19,6 @@ module.exports.Presc = PrescModel;
 
 // Get all prescriptions
 
-module.exports.getAllPresc = function(callback, limit){
-    PrescModel.find(callback).limit(limit);
+module.exports.getAllPresc = function(callback){
+    PrescModel.find(callback);
 };
