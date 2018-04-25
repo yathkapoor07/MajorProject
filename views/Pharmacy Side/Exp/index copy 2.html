@@ -10,7 +10,18 @@
         <div ng-app="myApp" ng-controller="jsonCtrl" >
 
             <h3>JSON Fetching example in AngularJS </h3>
-            
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Car</th>
+                    <th>Model</th>
+                </tr>
+                <tr ng-repeat="x in myObject " >
+                    <th>{{x.id}}</th>
+                    <th>{{x.Car}}</th>
+                    <th>{{x.Model}}</th>
+                </tr>
+            </table>
             <h3>Original JSON file: {{myObject}}</h3>    
         </div>   
         <script>
@@ -30,6 +41,8 @@
 for (var i = 0; i < x.length; i++){
     
   document.write("<br><br>array index: " + i);
+ 
+  console.log("yello" +i);
 
   var obj = x[i];
 
@@ -39,10 +52,12 @@ for (var i = 0; i < x.length; i++){
     var value = obj[key];
  
     document.write("<br> - " + key + ": " + value);
-    
+
+  
 
   }
 }
+
 
 
                     //console.log(res.data.records);
@@ -51,6 +66,6 @@ for (var i = 0; i < x.length; i++){
             });
         
     </script>
-    
+  
     </body>
 </html>

@@ -49,251 +49,7 @@ ul {
 	height: 75px;
 	width: 75px;
 }
-#name
-{
-	top:75px;
-	left:200px;
-	position: absolute;
-	width: 200px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-}
-#nametext
-{
-	top:30px;
-	left:200px;
-	position: absolute;
-	color: white;
-	font-size: 100%;
-}
-#gendertext
 
-{
-top:30px;
-left:700px;
-position: absolute;
-color: white;
-font-size: 100%;
-}
-input[type=radio]
-{
-	background-color: white;
-	border: none;
-	color: ##360F59;
-	margin-left: 700px;
-	margin-top: 110px;
-
-}
-#maleavatar
-{
-	height: 100px;
-	width: 100px;
-	margin-left:800px;
-	top:100px; 
-	position: absolute;
-	border-radius: 50px;
-
-}
-#femaleavatar
-{
-	height: 100px;
-	width: 100px;
-	margin-left: 800px;
-	top:210px;
-	position: absolute;
-	border-radius: 50px;
-
-}
-#age
-{
-		
-	position: absolute;
-	top: 150px;
-	left: 200px;
-	width: 40px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-}
-#agename
-{
-	position: absolute;
-	top: 120px;
-	left: 200px;
-	color: white;
-	font-size: 100%;
-
-}
-#weight
-{
-	position: absolute;
-	top: 150px;
-	left: 400px;
-	width: 40px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-}
-#weightname
-{
-	position: absolute;
-	top: 120px;
-	left: 400px;
-	color: white;
-	font-size: 100%;
-}
-#dobname
-{
-	position: absolute;
-	top: 200px;
-	left: 200px;
-	color: white;
-	font-size: 100%;
-}
-#datepicker
-{
-	position: absolute;
-	top: 220px;
-	left: 200px;
-	border-radius: 10px;
-	width: 100px;
-	height:20px;
-}
-#patientid
-{
-	position: absolute;
-	width: 150px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-	top: 220px;
-	left:400px;
-}
-#patientidname
-{
-	position: absolute;
-	top: 200px;
-	left: 400px;
-	color: white;
-	font-size: 100%;
-}
-#symptomform
-{
-	position: absolute;
-	top: 275px;
-	left: 200px;
-	width: 350px;
-	height: 200px;
-	border-radius: 10px;
-}
-#medicineidname
-{
-	position: absolute;
-	top:500px;
-	left: 200px;
-	color: white;
-}
-#medicine
-{
-position: absolute;
-	width: 225px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-	top: 520px;
-	left:200px;
-}
-#dosage
-{
-	position: absolute;
-	width: 150px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-	top: 520px;
-	left:450px;
-
-}
-#dosageidname
-{
-	position: absolute;
-	top: 500px;
-	left: 450px;
-	color: white;
-	
-}
-#duration
-{
-	position: absolute;
-	width: 100px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-	top: 520px;
-	left:625px;
-}
-#durationidname
-{
-	position: absolute;
-	top: 500px;
-	left: 625px;
-	color: white;
-}
-#times
-{
-	position: absolute;
-	top: 520px;
-	left: 750px;
-	width: 40px;
-	height:20px;
-	font-size: 100%;
-	border-radius: 10px;
-
-}
-#timesidname
-{
-	position: absolute;
-	top: 500px;
-	left: 750px;
-	color: white;
-}
-#specialinstructionsform
-{
-	position: absolute;
-	top: 575px;
-	left: 200px;
-	width: 350px;
-	height: 200px;
-	border-radius: 10px;
-}
-#submitbutton
-{
-	position:absolute;
-	left:200px;
-	top:800px;
-	width: 50;
-	height: 25;
-	border-radius: 10px;
-	font-family: "Avenir Next";
-	background-color: #553472;
-	color:white;
-
-
-}
-#resetbutton
-{
-	position:absolute;
-	left:300px;
-	top:800px;
-	width: 50;
-	height: 25;
-	border-radius: 10px;
-	font-family: "Avenir Next";
-	background-color: #553472;
-	color:white;
-
-}
 li
 {
 
@@ -488,10 +244,28 @@ th
     background-color: #666;
     color: white;
 }
-.exp
+
+h3
 {
-	position: relative;
-	color: white;
+	position: absolute;
 	margin-left: 200px;
-	margin-top: 200px;
+	color: white;
+	font-style: underline;
+}
+#exp1
+{
+	color: black;
+	font-family: "Avenir Next";
+	font-style: bold;
+	font-size: 20px;
+	background-color: white;
+  
+    position: fixed; 
+}
+#ref
+{
+	color: white;
+	position: absolute;
+	margin-left: 200px;
+
 }
