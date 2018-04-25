@@ -71,9 +71,9 @@ router.post('/api/login', function(req, res){
 
         return res.json(User101.UserData.find({username: 'username'}));
     });*/
-    //if(username === 'yatharth' || username === 'natasha')
-      //  return res.status(200).send();
-    //console.log('YES');
+    if(username === 'yatharth' || username === 'natasha')
+        return res.status(200).send();
+    console.log('YES');
 });
 
 module.exports = router;

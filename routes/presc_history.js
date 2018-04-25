@@ -4,7 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User101 = require('C:/Users/Yatharth Kapoor/WebstormProjects/untitled/models/user_data.js');
 var sent ; //= require('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Pharmacy Side//Exp//myjson.json');
-var presc = require('C://Users//Yatharth Kapoor//Documents//MajorProject//models//prescription.js');
+Presc = require('C://Users//Yatharth Kapoor//Documents//MajorProject//models//prescription.js');
 var limit = 1000;
 
 /* GET login page. */
@@ -83,7 +83,16 @@ router.get('/', function(req, res, next) {
 
 //Send Complete JSON
 router.get('/api', function (req, res) {
+<<<<<<< HEAD
     
+=======
+    Presc.getAllPresc(function(err, records){
+        if(err)
+            throw err;
+        //console.log(records);
+        res.json(records);
+    })
+>>>>>>> 0623307c8b8a9a7f1bf960c95671270215efc829
 });
 
 module.exports = router;
