@@ -77,8 +77,7 @@ app.listen(port, function(){
 });
 
 app.use('/', login);
-app.use('/api/login', login);
 app.use('/home', index);
 app.use('/api/home', index);
 app.use('/presc_history', presc_history);
-app.use('/api/presc_history', presc_history);
+app.use('/presc_history/api', presc_history);

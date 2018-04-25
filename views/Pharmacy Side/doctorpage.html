@@ -55,7 +55,7 @@ Doctor's view
 <script type="text/javascript">
 var app = angular.module('doctor',[]);
 app.controller('MainCtrl', function ($scope, $http) {
-	$http.get("https://api.myjson.com/bins/8jbyj")
+	$http.get("https://localhost:3000/presc_history/api")
                 .then(function (res) {
                     
                     

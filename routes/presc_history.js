@@ -9,7 +9,7 @@ var limit = 1000;
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
-    res.render('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Pharmacy Side//Exp//index.html');
+    res.render('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Pharmacy Side//doctorpage.html');
 });
 
 {//Register New User
@@ -83,16 +83,12 @@ router.get('/', function(req, res, next) {
 
 //Send Complete JSON
 router.get('/api', function (req, res) {
-<<<<<<< HEAD
-    
-=======
     Presc.getAllPresc(function(err, records){
         if(err)
             throw err;
         //console.log(records);
         res.json(records);
     })
->>>>>>> 0623307c8b8a9a7f1bf960c95671270215efc829
 });
 
 module.exports = router;

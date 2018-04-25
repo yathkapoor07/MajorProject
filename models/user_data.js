@@ -22,11 +22,11 @@ module.exports.createUser = function(newUser, callback{
 
 module.exports.getUserByUsername = function(username, callback){
     var query = {username: username};
-    UserData.findOne(query, callback);
+    UserModel.findOne(query, callback);
 }
 
 module.exports.getUserById = function(id, callback){
-    UserData.findById(id, callback);
+    UserModel.findById(id, callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){

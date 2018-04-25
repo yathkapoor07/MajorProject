@@ -3,6 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User101 = require('C:/Users/Yatharth Kapoor/WebstormProjects/untitled/models/user_data.js');
+var yath = require('C:/Users/Yatharth Kapoor/Documents/MajorProject/routes/yath.json');
+var natt = require('C:/Users/Yatharth Kapoor/Documents/MajorProject/routes/natt.json');
+var guest = require('C:/Users/Yatharth Kapoor/Documents/MajorProject/routes/guest.json');
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
@@ -71,8 +74,12 @@ router.post('/api/login', function(req, res){
 
         return res.json(User101.UserData.find({username: 'username'}));
     });*/
-    if(username === 'yatharth' || username === 'natasha')
-        return res.status(200).send();
+    if(username === 'yatharth'){
+        return res.render('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Doctor Side//webpagecode.html');;
+    }
+    else if(username === 'natasha'){
+        return res.render('C://Users//Yatharth Kapoor//Documents//MajorProject//views//Pharmacy Side//webpagecode.html');
+    }
     console.log('YES');
 });
 
